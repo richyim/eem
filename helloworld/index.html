@@ -70,8 +70,7 @@ action 1.0 syslog msg "Hello World 2"</code></pre>
 RS07#term mon
 RS07#event manager run helloworld2
 RS07#
-*May  7 07:00:45.817: %HA_EM-6-LOG: helloworld2: Hello World 2</textarea>
-        </div>
+*May  7 07:00:45.817: %HA_EM-6-LOG: helloworld2: Hello World 2</textarea></div>
 
         <div class="eem-explanation">        
             <p>In EEM, using "syslog" means that the message is sent to the logging buffers and not directly to the SSH terminal console. To see the syslog messages in the SSH terminal console, you must first issue the "term mon" command. When the "event manager run helloworld2" command is executed, it triggers the syslog message, which is then reflected in the SSH terminal console if "term mon" is enabled.</p>
