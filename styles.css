@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #ecf0f1;
+    margin: 0;
+    padding: 20px;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    color: #3498db;
+}
+
+/* List styles */
+.word-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.word-list li {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.word-list li:hover {
+    background-color: #3498db; /* Color changes on hover */
+    color: #fff; /* Text color changes to white on hover */
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .content-container {
+        padding: 10px;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
