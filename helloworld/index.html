@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blog-container">
+        <h1>EEM Hello World</h1>
+        <p>Here is a sample code for EEM for "Hello, World!" program</p>
+        
+        <!-- Code block with copy icon -->
+        <div class="code-container">
+            <div class="copy-icon" onclick="copyCodeToClipboard()">
+                <!-- CSS-based pen icon will be generated here -->
+            </div>
+            <pre class="code-block" id="codeBlock">
+<code>event manager applet HelloWorld
+event none
+action 1.0 puts "Hello, World!"</code></pre>
+        </div>
+
+        <p>This EEM script outputs the text "Hello, World!" when manually triggered. It's a simple example to demonstrate the basics of Cisco's Embedded Event Manager (EEM).</p>
+        
+        <!-- Execution Result -->
+        <div class="execution-result">
+            <p>Execution result:</p>
+            <textarea readonly id="executionResult">RS07#event manager run HelloWorld
+Hello, World!</textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
