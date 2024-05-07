@@ -84,15 +84,30 @@ code {
     border-radius: 4px;
 }
 
+
+.execution-result textarea {
+    width: calc(100% - 20px); /* Subtract padding from total width */
+    height: auto; /* Adjust height automatically */
+    min-height: 50px; /* Minimum height to maintain consistency */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Allow only vertical resizing */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+
+
 .execution-result p {
     margin: 0 0 10px 0;
 }
 
-.execution-result textarea {
+/* .execution-result textarea {
     width: 100%;
     height: 50px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: none; /* Prevent resizing of the textarea */
-}
+} */
