@@ -103,11 +103,33 @@ code {
     margin: 0 0 10px 0;
 }
 
-/* .execution-result textarea {
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: none; /* Prevent resizing of the textarea */
-} */
+/* Style for the sandbox link container */
+.sandbox-link {
+    margin-top: 20px; /* Adjust as needed */
+    display: inline-block; /* Or 'block' if you want it on a new line */
+}
+
+/* Style for the sandbox icon */
+.sandbox-icon {
+    display: inline-block;
+    width: 20px; /* Icon width */
+    height: 20px; /* Icon height */
+    background-color: #4A90E2; /* Icon color, adjust as needed */
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle; /* Align icon with text */
+    border-radius: 3px; /* Optional: if you want rounded corners */
+    
+    /* Example icon design - a simple box with a 'S' letter */
+    position: relative;
+}
+
+.sandbox-icon::after {
+    content: "S";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
