@@ -1,5 +1,8 @@
 body {
     font-family: Arial, sans-serif;
+    background: #ecf0f1;
+    margin: 0;
+    padding: 20px;
 }
 
 .content-container {
@@ -7,10 +10,12 @@ body {
     margin: auto;
     background: #fff;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 
 h1 {
-    color: #333;
+    color: #3498db;
 }    
 
 /* Code block styles */
@@ -27,6 +32,18 @@ h1 {
 code {
     display: block; /* Ensures code is formatted in a block */
     white-space: pre-wrap; /* Keeps any whitespace formatting */
+}
+
+/* Code block styles */
+.code-container pre {
+    background-color: #333;
+    color: #9b59b6;
+    padding: 10px;
+    overflow-x: auto;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+    border-radius: 4px;
+    white-space: pre-wrap;
 }
 
 /* Code block container */
@@ -75,6 +92,7 @@ code {
     padding: 10px;
     margin-top: 20px;
     border-radius: 4px;
+    font-family: monospace;
 }
 
 
