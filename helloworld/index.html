@@ -41,6 +41,30 @@ action 1.0 puts "Hello, World!"</code></pre>
             <textarea readonly id="executionResult">RS07#event manager run HelloWorld
 Hello, World!</textarea>
         </div>
+
+        <!-- Second EEM Script Example -->
+        <h2>Second EEM Script Example</h2>
+        <div class="code-container">
+            <div class="copy-icon" onclick="copyCodeToClipboard('codeBlock2')">
+                <!-- CSS-based pen icon will be generated here -->
+            </div>
+            <pre class="code-block" id="codeBlock2">
+<code>event manager applet helloworld2 authorization bypass
+event none
+action 1.0 syslog msg "Hello World 2"</code>
+            </pre>
+        </div>
+        <!-- EEM Script Explanation for Second Example -->
+        <div class="eem-explanation">
+            <h2>EEM Script Explanation for Second Example:</h2>
+            <p><strong>Line 1: event manager applet helloworld2 authorization bypass</strong><br>
+            - This line begins a new EEM applet named "helloworld2". The "authorization bypass" part indicates that the execution of this applet does not require additional authorization, allowing it to run without adhering to command authorization checks.</p>
+            <p><strong>Line 3: action 1.0 syslog msg "Hello World 2"</strong><br>
+            - This line defines an action to be taken by the applet, which in this case is to send a message to the logging buffers using the syslog facility. The message to be logged is "Hello World 2".</p>
+            <p>In EEM, using "syslog" means that the message is sent to the logging buffers and not directly to the SSH terminal console. To see the syslog messages in the SSH terminal console, you must first issue the "term mon" command. When the "event manager run helloworld2" command is executed, it triggers the syslog message, which is then reflected in the SSH terminal console if "term mon" is enabled.</p>
+        </div>
+
+        
     </div>
 
     <script src="script.js"></script>
