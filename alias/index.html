@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Alias in Cisco IOS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content-container">
+        <h1>Creating Alias in Cisco IOS</h1>
+        <p>In Cisco IOS, you can use the "alias" command to create a shortcut or alias for a longer command, including an EEM applet execution command. This allows you to assign a shorter word or phrase to run the EEM applet without having to type the entire command each time.</p>
+        <div class="code-container">
+            <div class="copy-icon" onclick="copyCodeToClipboard()"></div>
+            <pre id="codeBlock"><code>
+alias hello event manager run helloworld
+            </code></pre>
+        </div>
+        <p>In this example, the alias "hello" is created to run the EEM applet named "helloworld". Now, whenever you enter the "hello" command, it will execute the specified EEM applet without having to type the full "event manager run helloworld" command.</p>
+        <div class="execution-result">
+            <p>Router# hello</p>
+        </div>
+        <p>The above command will execute the "helloworld" EEM applet.</p>
+        <p>Remember to configure the alias in the global configuration mode or in the specific configuration mode where you want it to be available. Also, note that aliases are specific to the device's running configuration and do not persist across reboots.</p>
+        <p>It's worth mentioning that the availability and usage of the "alias" command may vary depending on the specific Cisco IOS version and platform you are using. It's recommended to consult the official Cisco documentation or command reference for your specific software version to ensure accurate and up-to-date information.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
