@@ -61,9 +61,23 @@ action 1.0 syslog msg "Hello World 2"</code>
             - This line begins a new EEM applet named "helloworld2". The "authorization bypass" part indicates that the execution of this applet does not require additional authorization, allowing it to run without adhering to command authorization checks.</p>
             <p><strong>Line 3: action 1.0 syslog msg "Hello World 2"</strong><br>
             - This line defines an action to be taken by the applet, which in this case is to send a message to the logging buffers using the syslog facility. The message to be logged is "Hello World 2".</p>
-            <p>In EEM, using "syslog" means that the message is sent to the logging buffers and not directly to the SSH terminal console. To see the syslog messages in the SSH terminal console, you must first issue the "term mon" command. When the "event manager run helloworld2" command is executed, it triggers the syslog message, which is then reflected in the SSH terminal console if "term mon" is enabled.</p>
         </div>
 
+        <!-- Execution Result for Second Example -->
+        <div class="execution-result">
+            <p>Execution result for Second Example:</p>
+            <textarea readonly id="executionResult2">RS07#event manager run helloworld2
+
+RS07#term mon
+RS07#event manager run helloworld2
+RS07#
+*May  7 07:00:45.817: %HA_EM-6-LOG: helloworld2: Hello World 2</textarea>
+        </div>
+
+        <div class="eem-explanation">        
+            <p>In EEM, using "syslog" means that the message is sent to the logging buffers and not directly to the SSH terminal console. To see the syslog messages in the SSH terminal console, you must first issue the "term mon" command. When the "event manager run helloworld2" command is executed, it triggers the syslog message, which is then reflected in the SSH terminal console if "term mon" is enabled.</p>
+        </div>
+        
         
     </div>
 
