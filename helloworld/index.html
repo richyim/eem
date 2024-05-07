@@ -23,6 +23,17 @@ action 1.0 puts "Hello, World!"</code></pre>
         </div>
 
         <p>This EEM script outputs the text "Hello, World!" when manually triggered. It's a simple example to demonstrate the basics of Cisco's Embedded Event Manager (EEM).</p>
+
+        <!-- EEM Script Explanation -->
+        <div class="eem-explanation">
+            <h2>EEM Script Explanation:</h2>
+            <p><strong>Line 1: event manager applet HelloWorld</strong><br>
+            - This line defines the beginning of an EEM applet named "HelloWorld". An applet is a script that is executed in response to a specific event or trigger.</p>
+            <p><strong>Line 2: event none</strong><br>
+            - This line specifies the event that triggers the execution of the applet. In this case, "none" is used, which means the applet will be executed without any specific event. This essentially makes the applet run immediately upon being created.</p>
+            <p>The "event none" configuration allows you to manually trigger the execution of the applet, typically through the use of the "event manager run" command. When the applet is executed, it moves on to the action(s) defined within the applet.</p>
+        </div>
+
         
         <!-- Execution Result -->
         <div class="execution-result">
