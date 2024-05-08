@@ -15,6 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: `count=${count}`
+                mode: 'no-cors'
             });
         })
         .catch(error => console.error('Error:', error));
