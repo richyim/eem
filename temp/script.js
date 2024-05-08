@@ -1,22 +1,46 @@
 document.getElementById('myForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
+
+    var textInput = document.getElementById('textInput').value;
+    var emailInput = document.getElementById('emailInput').value;
     
-    // Prepare data to be sent in the fetch request
-    var formData = {
-        text: document.getElementById('textInput').value,
-        email: document.getElementById('emailInput').value
+    // Replace with your actual access token and Webex Teams recipient email
+    var accessToken = 'YOUR_ACCESS_TOKEN_HERE';
+    var recipientEmail = emailInput; // Or the specific email you want to send a message to
+
+    // Webex Teams API endpoint for creating messages
+    var webexUrl = 'https://webexapis.com/v1/messages';
+
+    // HTTP headers with the access token for authorization
+    var headers = {
+        'Authorization': 'Bearer ' + accessToken,
+        'Content-Type': 'application/json'
     };
-    
-    // Example fetch request (this won't actually work unless you have an endpoint to send data to)
-    fetch('your-endpoint-url', {
+
+    // The body of the POST request
+    var payload = {
+        'toPersonEmail': recipientEmail,
+        'text': textInput
+    };
+
+    // Make the POST request to send the message
+    fetch(webexUrl, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'mode': 'no-cors' // Usually 'no-cors' is used in the options object, not headers
-        },
-        body: JSON.stringify(formData)
+        headers: headers,
+        body: JSON.stringify(payload)
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Message sent:', data);
+        alert('Message sent successfully!');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to send message: ' + error.message);
+    });
 });
