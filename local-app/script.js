@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: `count=${count}`
+                body: `count=${count}`,
                 mode: 'no-cors'
             });
         })
