@@ -37,6 +37,48 @@ textarea {
     color: #fff;
 }
 
+.code-container {
+    position: relative;
+}
+
+/* Copy icon styles */
+
+.pen-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pen-icon::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    background-color: black;
+    top: 2px;
+    left: 7px;
+    transform: rotate(45deg);
+}
+
+.pen-icon::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background-color: black;
+    bottom: 2px;
+    left: 4px;
+}
+
+/*
 .pen-icon {
     position: absolute;
     top: 10px;
@@ -59,7 +101,7 @@ textarea {
     background-color: #000;
     transform: rotate(-45deg);
 }
-
+*/
 @media (min-width: 768px) {
     .container {
         width: 80%;
