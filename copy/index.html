@@ -9,10 +9,22 @@
 <body>
     <div class="container">
         <h1>Copy the local app</h1>
+        
         <div class="textarea-container">
-            <textarea id="sourceCode" readonly>Loading source code...</textarea>
-            <div class="pen-icon" onclick="copyToClipboard()"></div>
+            <textarea id="sourceHTML" readonly>Loading HTML source code...</textarea>
+            <div class="pen-icon" onclick="copyToClipboard('sourceHTML')"></div>
         </div>
+        
+        <div class="textarea-container">
+            <textarea id="sourceJS" readonly>Loading JS source code...</textarea>
+            <div class="pen-icon" onclick="copyToClipboard('sourceJS')"></div>
+        </div>
+        
+        <div class="textarea-container">
+            <textarea id="sourceCSS" readonly>Loading CSS source code...</textarea>
+            <div class="pen-icon" onclick="copyToClipboard('sourceCSS')"></div>
+        </div>
+        
     </div>
     <script src="script.js"></script>
 </body>
