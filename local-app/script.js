@@ -1,24 +1,28 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     fetch('http://127.0.0.1:8001/', {
-        mode: 'no-cors' // This mode will prevent you from reading the response
+        mode: 'no-cors' // Include no-cors mode in the fetch options
     })
-        .then(response => response.text())
-        .then(count => {
-            displayCount(count);
-            return count;
-        })
-        .then(count => {
-            // After displaying the count, send a POST request to increment it
-            fetch('http://127.0.0.1:8001/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `count=${count}`,
-                mode: 'no-cors'
-            });
-        })
-        .catch(error => console.error('Error:', error));
+    .then(response => {
+        if (!response.ok && response.type !== 'opaque') {
+            throw new Error('Network response was not ok.');
+        }
+        return response.text(); // This won't work with no-cors mode, as the response is opaque
+    })
+    .then(count => {
+        displayCount(count); // Since we cannot read the response, this will not work as expected
+        return count;
+    })
+    .then(count => {
+        fetch('http://127.0.0.1:8001/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `count=${count}`,
+            mode: 'no-cors' // Include no-cors mode in the fetch options
+        });
+    })
+    .catch(error => console.error('Error:', error));
 });
 
 function displayCount(count) {
