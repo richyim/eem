@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    fetch('http://127.0.0.1:8001/')
+    fetch('http://127.0.0.1:8001/', {
+        mode: 'no-cors' // This mode will prevent you from reading the response
+    })
         .then(response => response.text())
         .then(count => {
             displayCount(count);
