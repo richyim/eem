@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Register click event listeners for each list item
     openUrl('hello-world', 'https://richyim.github.io/eem/helloworld/');
     openUrl('alias', 'https://richyim.github.io/eem/alias/');
-    openUrl('shutdown-interface', 'https://richyim.github.io/eem/shutdown/');
+    openUrl('shutdown-interface', 'https://richyim.github.io/eem/shutdown-interface/');
     openUrl('repeating-task', 'https://richyim.github.io/eem/timmer/');
 });
