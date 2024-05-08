@@ -1,39 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shutdown Interface Using EEM</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="blog-container">
-        <h1>Shutdown Interface Using EEM</h1>
-        <div class="code-container">
-            <div class="code-block" id="codeBlock">
-                <code>
-event manager applet shutdown
-event none
-action 1.0 cli command "enable"
-action 2.0 cli command "config t"
-action 3.0 cli command "interface gi1/0/1"
-action 4.0 cli command "shutdown"
-                </code>
-            </div>
-            <div class="copy-icon" onclick="copyCodeToClipboard()"></div>
-        </div>
-        <div class="execution-result">
-            <p>Execution Result:</p>
-            <textarea readonly>
-router# event manager run shutdown
-%-5- interface gi 1/0/1 is down
-            </textarea>
-        </div>
-        <a href="index.html" class="sandbox-link">
-            <div class="sandbox-icon"></div>
-            Back to Examples
-        </a>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.blog-container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Code block styles */
+.code-block {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    overflow-x: auto; /* Allows for horizontal scrolling if the code is too long */
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+    border-radius: 4px;
+}
+
+code {
+    display: block; /* Ensures code is formatted in a block */
+    white-space: pre-wrap; /* Keeps any whitespace formatting */
+}
+
+/* Code block container */
+.code-container {
+    position: relative;
+}
+
+/* Copy icon styles */
+.copy-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-icon::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    background-color: black;
+    top: 2px;
+    left: 7px;
+    transform: rotate(45deg);
+}
+
+.copy-icon::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background-color: black;
+    bottom: 2px;
+    left: 4px;
+}
+
+/* Execution Result */
+.execution-result {
+    background-color: #eee;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.execution-result textarea {
+    width: calc(100% - 20px); /* Subtract padding from total width */
+    height: auto; /* Adjust height automatically */
+    min-height: 50px; /* Minimum height to maintain consistency */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Allow only vertical resizing */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.execution-result p {
+    margin: 0 0 10px 0;
+}
+
+/* Style for the sandbox link container */
+.sandbox-link {
+    margin-top: 20px; /* Adjust as needed */
+    display: inline-block; /* Or 'block' if you want it on a new line */
+}
+
+/* Style for the sandbox icon */
+.sandbox-icon {
+    display: inline-block;
+    width: 20px; /* Icon width */
+    height: 20px; /* Icon height */
+    background-color: #4A90E2; /* Icon color, adjust as needed */
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle; /* Align icon with text */
+    border-radius: 3px; /* Optional: if you want rounded corners */
+    
+    /* Example icon design - a simple box with a 'S' letter */
+    position: relative;
+}
+
+.sandbox-icon::after {
+    content: "S";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
