@@ -1,25 +1,30 @@
 // Function to fetch the source code of the URL
-async function fetchSourceCode(url) {
+async function fetchSourceCode(url, elementId) {
     try {
         const response = await fetch(url);
         const text = await response.text();
-        return text;
+        document.getElementById(elementId).value = text;
     } catch (error) {
         console.error('Error fetching source:', error);
-        return 'Failed to load source code.';
+        document.getElementById(elementId).value = 'Failed to load source code.';
     }
 }
 
-// Display the source code in the text box
+// Fetch and display the source code in the text boxes
 (async () => {
-    const url = 'https://richyim.github.io/eem/local-app/index.html';
-    const sourceCode = await fetchSourceCode(url);
-    document.getElementById('sourceCode').value = sourceCode;
+    const urls = {
+        html: 'https://richyim.github.io/eem/local-app/index.html',
+        js: 'https://richyim.github.io/eem/copy/script.js',
+        css: 'https://richyim.github.io/eem/copy/styles.css',
+    };
+    await fetchSourceCode(urls.html, 'sourceHTML');
+    await fetchSourceCode(urls.js, 'sourceJS');
+    await fetchSourceCode(urls.css, 'sourceCSS');
 })();
 
 // Function to copy text to clipboard
-function copyToClipboard() {
-    const textarea = document.getElementById('sourceCode');
+function copyToClipboard(elementId) {
+    const textarea = document.getElementById(elementId);
     textarea.select();
     document.execCommand('copy');
 }
