@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shutdown Interface Using EEM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blog-container">
+        <h1>Shutdown Interface Using EEM</h1>
+        <div class="code-container">
+            <div class="code-block" id="codeBlock">
+                <code>
+event manager applet shutdown
+event none
+action 1.0 cli command "enable"
+action 2.0 cli command "config t"
+action 3.0 cli command "interface gi1/0/1"
+action 4.0 cli command "shutdown"
+                </code>
+            </div>
+            <div class="copy-icon" onclick="copyCodeToClipboard()"></div>
+        </div>
+        <div class="execution-result">
+            <p>Execution Result:</p>
+            <textarea readonly>
+router# event manager run shutdown
+%-5- interface gi 1/0/1 is down
+            </textarea>
+        </div>
+        <a href="index.html" class="sandbox-link">
+            <div class="sandbox-icon"></div>
+            Back to Examples
+        </a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
