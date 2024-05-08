@@ -16,3 +16,10 @@ function fetchAndDisplaySourceCode(url, elementId) {
             console.error('Fetching and displaying source code failed:', error);
         });
 }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    // Your existing code here...
+    
+    // Fetch and display the source code from the external URL
+    fetchAndDisplaySourceCode('https://richyim.github.io/eem/local-app/index.html', 'codeBlock');
+});
