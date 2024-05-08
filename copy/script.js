@@ -16,3 +16,10 @@ async function fetchSourceCode(url) {
     const sourceCode = await fetchSourceCode(url);
     document.getElementById('sourceCode').value = sourceCode;
 })();
+
+// Function to copy text to clipboard
+function copyToClipboard() {
+    const textarea = document.getElementById('sourceCode');
+    textarea.select();
+    document.execCommand('copy');
+}
