@@ -1,10 +1,15 @@
-<!-- Code block with copy icon for the fetched local app source code -->
-<div class="code-container">
-    <div class="copy-icon" onclick="copyCodeToClipboard('localAppCodeBlock')">
-        <!-- CSS-based icon will be generated here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Copy the local app</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Copy the local app</h1>
+        <textarea id="sourceCode" rows="10" cols="50">Loading source code...</textarea>
     </div>
-    <pre class="code-block" id="localAppCodeBlock">
-<code>// The source code from the external URL will be displayed here</code></pre>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
