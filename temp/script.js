@@ -5,7 +5,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     var emailInput = document.getElementById('emailInput').value;
     
     // Replace with your actual access token and Webex Teams recipient email
-    var accessToken = 'YOUR_ACCESS_TOKEN_HERE';
+    var accessToken = 'OGE1ZDk4ZTItZmFhOS00NDU3LTgyZGYtNmFjY2FlZTgyZTZjMTkzZTM1OGQtNmRh_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f';
     var recipientEmail = emailInput; // Or the specific email you want to send a message to
 
     // Webex Teams API endpoint for creating messages
