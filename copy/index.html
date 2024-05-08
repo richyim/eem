@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copy the local app</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Copy the local app</h1>
-        <textarea id="sourceCode" rows="10" cols="50">Loading source code...</textarea>
+        <div class="textarea-container">
+            <textarea id="sourceCode" readonly>Loading source code...</textarea>
+            <div class="pen-icon" onclick="copyToClipboard()"></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
