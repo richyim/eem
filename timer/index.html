@@ -8,11 +8,12 @@
 </head>
 <body>
     <div class="blog-container">
-        <h1>EEM Scripts and Results</h1>
+        <h1>EEM timer event</h1>
         
         <!-- First EEM script explanation and result -->
         <div class="eem-explanation">
-            <p>This is the first EEM script:</p>
+            <p>To repeatedly trigger an event at regular intervals, we can utilize a timer. In the first example</p>
+            <p>provided, a timer watchdog is configured to activate the event every 30 seconds.</p>
             <div class="code-container">
                 <div class="code-block" id="codeBlock">
                     <code>event manager applet helloworld2 authorization bypass
@@ -23,7 +24,9 @@ action 1.0 syslog msg "Hello World 2"</code>
             </div>
             <div class="execution-result">
                 <p>Execution Result:</p>
-                <textarea readonly>Hello World 2</textarea>
+                <textarea readonly>RS07#term mon
+                    *May 15 17:35:38.959: %HA_EM-6-LOG: helloworld2: Hellow World 2
+                </textarea>
             </div>
         </div>
         
