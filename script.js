@@ -11,5 +11,5 @@ document.addEventListener('DOMContentLoaded', function () {
     openUrl('hello-world', 'https://richyim.github.io/eem/helloworld/');
     openUrl('alias', 'https://richyim.github.io/eem/alias/');
     openUrl('shutdown-interface', 'https://richyim.github.io/eem/shutdown-interface/');
-    openUrl('repeating-task', 'https://richyim.github.io/eem/timmer/');
+    openUrl('timer', 'https://richyim.github.io/eem/timer/');
 });
