@@ -34,26 +34,67 @@ action 1.0 syslog msg "Hello World 2"</code>
         
         <!-- Second EEM script explanation and result -->
         <div class="eem-explanation">
-            <p>Another way for setting up a timer event is using cron timer. The syntax is as following:</p>
+            <p>Another way for setting up a timer event is using the cron timer. The syntax is as follows:event timer cron name &lt;Timer name&gt; cron-entry "&lt;minute&gt; &lt;hour&gt; &lt;day of month&gt; &lt;month&gt; &lt;day of week&gt;</p>
             <div class="code-container">
                 <div class="code-block" id="codeBlock2">
                     <code>event manager applet EEM-cron authorization bypass
-event timer cron name &lt;Timer name&gt; cron-entry "&lt;minute&gt; &lt;hour&gt; &lt;day of month&gt; &lt;month&gt; &lt;day of week&gt;"</code>
+event timer cron name TEST cron-entry "*/1 * * * *"
+action 1.0 syslog msg "Test"</code>
                 </div>
                 <div class="copy-icon" onclick="copyCodeToClipboard('codeBlock2')"></div>
             </div>
-            <!-- ... (rest of the content) ... -->
+            <div class="execution-result">
+                <p>Execution Result:</p>
+                <textarea readonly>RS07#term mon
+*May 15 17:36:00.007: %HA_EM-6-LOG: EEM-cron: Test
+                    </textarea>
+            </div>
+            <p>The cron format consists of five time and date fields separated by at least one space. Scheduled tasks are executed when the minute, hour, and month of year fields match the current time and date, and when at least one of the two day fields (day of month, or day of week) matches the current date.</p>
         </div>
         
         <!-- Cron Format Table -->
         <div class="cron-format-table">
-            <!-- ... (previous content) ... -->
+            <h2>Cron Format Fields</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field Name</th>
+                        <th>Allowed Values</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>minute</td>
+                        <td>0-59</td>
+                    </tr>
+                    <tr>
+                        <td>hour</td>
+                        <td>0-23</td>
+                    </tr>
+                    <tr>
+                        <td>day of month</td>
+                        <td>1-31</td>
+                    </tr>
+                    <tr>
+                        <td>month</td>
+                        <td>1-12</td>
+                    </tr>
+                    <tr>
+                        <td>day of week</td>
+                        <td>0-7 (0 or 7 is Sunday)</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
         
-        <!-- Step Values Explanation -->
-        <div class="step-values">
-            <!-- ... (previous content) ... -->
-        </div>
+    <!-- Step Values Explanation -->
+    <div class="step-values">
+        <h2>Step Values</h2>
+        <p>Step values can be used in conjunction with ranges. The syntax <em>range/step</em> defines the range and an execution interval.</p>
+        <p>If you specify <em>first-last/step</em>, execution takes place at <em>first</em>, then at all successive values that are distant from <em>first</em> by <em>step</em>, until <em>last</em>.</p>
+        <p>For example, to specify command execution every other hour, use <em>0-23/2</em>. This expression is equivalent to the values 0,2,4,6,8,10,12,14,16,18,20,22.</p>
+        <p>If you specify <em>*/step</em>, execution takes place at every interval of <em>step</em> through the unrestricted range. For example, as an alternative to <em>0-23/2</em> for execution every other hour, use <em>*/2</em>.</p>
     </div>
 
     <script src="script.js"></script>
