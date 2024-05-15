@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blog-container">
+        <h1>EEM Scripts and Results</h1>
+        
+        <!-- First EEM script explanation and result -->
+        <div class="eem-explanation">
+            <p>This is the first EEM script:</p>
+            <div class="code-container">
+                <div class="code-block" id="codeBlock">
+                    <code>event manager applet helloworld2 authorization bypass
+event timer watchdog time 30
+action 1.0 syslog msg "Hello World 2"</code>
+                </div>
+                <div class="copy-icon" onclick="copyCodeToClipboard('codeBlock')"></div>
+            </div>
+            <div class="execution-result">
+                <p>Execution Result:</p>
+                <textarea readonly>Hello World 2</textarea>
+            </div>
+        </div>
+        
+        <!-- Second EEM script explanation and result -->
+        <div class="eem-explanation">
+            <p>This is the second EEM script:</p>
+            <div class="code-container">
+                <div class="code-block" id="codeBlock2">
+                    <code>event manager applet EEM-cron authorization bypass
+event timer cron name TEST cron-entry "*/1 * * * *"
+action 1.0 syslog msg "Test"</code>
+                </div>
+                <div class="copy-icon" onclick="copyCodeToClipboard('codeBlock2')"></div>
+            </div>
+            <div class="execution-result">
+                <p>Execution Result:</p>
+                <textarea readonly>Test</textarea>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
