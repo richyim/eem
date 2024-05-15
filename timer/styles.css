@@ -133,3 +133,21 @@ code {
     font-weight: bold;
     font-family: Arial, sans-serif;
 }
+
+/* Cron Format Table Styles */
+.cron-format-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cron-format-table th,
+.cron-format-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.cron-format-table th {
+    background-color: #f4f4f4;
+}

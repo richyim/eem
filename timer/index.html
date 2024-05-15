@@ -6,17 +6,16 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Repeative EEM event</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Repetitive EEM Event</title>
+    <link rel="stylesheet" href="styles.css?version=1.0">
 </head>
 <body>
     <div class="blog-container">
-        <h1>EEM timer event</h1>
+        <h1>EEM Timer Event</h1>
         
         <!-- First EEM script explanation and result -->
         <div class="eem-explanation">
-            <p>To repeatedly trigger an event at regular intervals, we can utilize a timer. In the first example</p>
-            <p>provided, a timer watchdog is configured to activate the event every 30 seconds.</p>
+            <p>To repeatedly trigger an event at regular intervals, we can utilize a timer. In the first example provided, a timer watchdog is configured to activate the event every 30 seconds.</p>
             <div class="code-container">
                 <div class="code-block" id="codeBlock">
                     <code>event manager applet helloworld2 authorization bypass
@@ -28,16 +27,14 @@ action 1.0 syslog msg "Hello World 2"</code>
             <div class="execution-result">
                 <p>Execution Result:</p>
                 <textarea readonly>RS07#term mon
-*May 15 17:35:38.959: %HA_EM-6-LOG: helloworld2: Hellow World 2
+*May 15 17:35:38.959: %HA_EM-6-LOG: helloworld2: Hello World 2
                 </textarea>
             </div>
         </div>
         
         <!-- Second EEM script explanation and result -->
         <div class="eem-explanation">
-            <p>Another way for setting up the timer event is using timer cron. The syntax is:
-                event timer cron name <a task name> cron-entry "<UNIX cron format string>"</a>
-            </p>
+            <p>Another way for setting up a timer event is using the cron timer. The syntax is as follows:</p>
             <div class="code-container">
                 <div class="code-block" id="codeBlock2">
                     <code>event manager applet EEM-cron authorization bypass
@@ -49,12 +46,46 @@ action 1.0 syslog msg "Test"</code>
             <div class="execution-result">
                 <p>Execution Result:</p>
                 <textarea readonly>RS07#term mon
-*May 15 17:36:00.007: %HA_EM-6-LOG: EEM-corn: Test
+*May 15 17:36:00.007: %HA_EM-6-LOG: EEM-cron: Test
                     </textarea>
             </div>
+            <p>The cron format consists of five time and date fields separated by at least one space. Scheduled tasks are executed when the minute, hour, and month of year fields match the current time and date, and when at least one of the two day fields (day of month, or day of week) matches the current date.</p>
+        </div>
+        
+        <!-- Cron Format Table -->
+        <div class="cron-format-table">
+            <h2>Cron Format Fields</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field Name</th>
+                        <th>Allowed Values</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>minute</td>
+                        <td>0-59</td>
+                    </tr>
+                    <tr>
+                        <td>hour</td>
+                        <td>0-23</td>
+                    </tr>
+                    <tr>
+                        <td>day of month</td>
+                        <td>1-31</td>
+                    </tr>
+                    <tr>
+                        <td>month</td>
+                        <td>1-12</td>
+                    </tr>
+                    <tr>
+                        <td>day of week</td>
+                        <td>0-7 (0 or 7 is Sunday)</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     
     <script src="script.js"></script>
-</body>
-</html>
